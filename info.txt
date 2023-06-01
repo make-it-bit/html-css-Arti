@@ -1,0 +1,4 @@
+color (HEX) codes:
+
+dark blue: #3d5a80 // blue: #98c1d9 // light blue: #e0fbfc // red: #ee6c4d // black: #293241
+https://venngage.com/blog/blue-color-palettes/
