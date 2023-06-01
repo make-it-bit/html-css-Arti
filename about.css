@@ -34,6 +34,7 @@ body{
     padding: calc(0.5vh + 3px) 0;
     position: sticky;
     top: 0;
+    border-bottom: #3d5a80 3px solid;
 }
 .about_navbar > nav {
     margin-top: calc(15px + 1.5vh);
@@ -50,6 +51,7 @@ body{
 }
 
 .about_section {
+    border: 3px solid #3d5a80;
     box-sizing: border-box;
     max-width: 90%;
     background-color: #98c1d9;
@@ -77,14 +79,6 @@ body{
 .hobby > img {
     height: 200px;
 }
-
-footer {
-    margin-top: auto;
-    background-color: #98c1d9;
-    text-align: center;
-    font-size: large;
-}
-
 
 .mma_checkbox{
     display: none;
@@ -126,4 +120,20 @@ footer {
 }
 .lifting_checkbox:checked + .lifting_label > .lifting_text1{
     display: none;
+}
+
+.about_table{
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+.about_table tr, th, td{
+    border: 3px solid #3d5a80;
+}
+
+footer {
+    margin-top: auto;
+    background-color: #98c1d9;
+    text-align: center;
+    font-size: large;
+    border-top: #3d5a80 3px solid;
 }
