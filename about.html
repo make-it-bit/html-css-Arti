@@ -22,21 +22,81 @@
                 <section class="hobby">
                     <h3>MMA</h3>
                     <img src="resources/mma_icon_vector.svg" alt="cage"/>
-                    <p>Click on me for more...</p>
+                    <div class="hobby_text_section_1" onClick="changeParagraphOnToggle(0, 'small')">
+                        <p>Click on me for more...</p>
+                    </div>
+                    <div class="hobby_text_section_2">
+                        <p>
+                            Mixed martial arts (MMA) is a full-contact combat sport based on striking, 
+                            grappling and ground fighting.
+                        </p>
+                        <button class="button" onClick="changeParagraphOnToggle(0, 'big')">Close</button>
+                    </div>
                 </section>
                 <section class="hobby">
                     <h3>Coding</h3>
                     <img src="resources/coding_icon_vector.svg" alt="computer"/>
-                    <p>Click on me for more...</p>
+                    <div class="hobby_text_section_1" onClick="changeParagraphOnToggle(1, 'small')">
+                        <p>Click on me for more...</p>
+                    </div>
+                    <div class="hobby_text_section_2" onClick="changeParagraphOnToggle(1, 'big')">
+                        <p>
+                            What exactly coding means?
+                            Coding tells a machine which actions to perform and how to complete tasks.
+                        </p>
+                        <button class="button">Close</button>
+                    </div>
                 </section>
                 <section class="hobby">
                     <h3>Lifting</h3>
                     <img src="resources/lifting_icon_vector.svg" alt="squat rack"/>
-                    <p>Click on me for more...</p>
+                    <div class="hobby_text_section_1" onClick="changeParagraphOnToggle(2, 'small')">
+                        <p>Click on me for more...</p>
+                    </div>
+                    <div class="hobby_text_section_2" onClick="changeParagraphOnToggle(2, 'big')">
+                        <p>
+                            Weightlifting or weight lifting generally refers to physical exercises and 
+                            sports in which people lift weights.
+                        </p>
+                        <button class="button">Close</button>
+                    </div>
                 </section>
             </div>
         </section>
     </main>
-    
+    <footer>
+        <p>© 2023 Bitropia, All Rights Reserved</p>
+    </footer>
+
+    <script>
+        //getting bigger divs of the hobbies
+        const listOfBigDivs = document.getElementsByClassName("hobby_text_section_2");
+        
+        //setting their display to none
+        let i = 0;
+        while (i < listOfBigDivs.length) {
+            listOfBigDivs[i].style.display = "none";
+            i ++;
+        };
+        
+        //getting the smaller divs of the hobbies
+        const listOfSmallDivs = document.getElementsByClassName("hobby_text_section_1");
+
+        //function for toggling them 
+        function changeParagraphOnToggle(hobbyId, currentDivSize){
+            if (currentDivSize === "small") {
+                listOfBigDivs[hobbyId].style.display = "block";
+                listOfSmallDivs[hobbyId].style.display = "none"
+            } else if (currentDivSize === "big") {
+                listOfBigDivs[hobbyId].style.display = "none";
+                listOfSmallDivs[hobbyId].style.display = "block"
+            } else {
+                alert("Invalid request");
+                console.log("Got an invalid request")
+            }
+        }
+    </script>
 </body>
+
 </html>
+
