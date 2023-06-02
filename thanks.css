@@ -20,6 +20,7 @@ body {
   background-color: #2292a4;
   padding: 7px 15px;
   font-size: larger;
+  border: none;
   font-weight: 500;
   border-radius: 10px;
   text-decoration: none;
@@ -32,46 +33,15 @@ body {
   padding: 8px 17px;
 }
 
-.index_header {
-    background-color: #0f0a0a;
-  margin: 0;
-  text-align: center;
-  
-}
-.index_navbar {
-    padding: calc(0.5vh + 3px) 0;
-  display: flex;
-  justify-content: center;
-  gap: calc(15px + 1.5vw);
-  background-color: #0f0a0a;
-  border-bottom: #2292a4 3px solid;
-  position: sticky;
-  top: 0;
-}
-.index_header h1 {
-  margin: 0.75rem;
-}
-
-.index_main {
-  margin: calc(3vh + 15px) 0;
-}
-
-.info_section {
-  border: 3px solid #2292a4;
+.thanks_section {
+  border: 3px solid #BBADAD;
   box-sizing: border-box;
   max-width: 90%;
   background-color: #0f0a0a;
-  margin: calc(15px + 1vh) auto;
+  margin: 15vh auto;
   border-radius: 10px;
   text-align: center;
-  padding: calc(1vh + 5px) calc(1vw + 5px);
-}
-.info_section > article > p {
-  font-size: large;
-}
-.info_section > h2,
-.info_section > article > h2 {
-  margin-top: 0;
+  padding: calc(3vh + 20px) calc(1vw + 5px);
 }
 
 footer {
