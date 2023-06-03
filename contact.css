@@ -39,7 +39,7 @@ margin: 0;
 text-align: center;
 }
 .contact_navbar {
-  padding: calc(0.5vh + 3px) 0;
+  padding: calc(0.5vh + 3px) 10px;
 display: flex;
 justify-content: center;
 gap: calc(15px + 1.5vw);
@@ -47,6 +47,7 @@ background-color: #0f0a0a;
 border-bottom: #2292a4 3px solid;
 position: sticky;
 top: 0;
+flex-wrap: wrap;
 }
 .contact_header h1 {
   margin: 12px;
@@ -66,6 +67,9 @@ top: 0;
   border-radius: 10px;
   text-align: center;
   padding: calc(1vh + 5px) calc(1vw + 5px);
+}
+.form_section > h2 {
+
 }
 #form_box {
   font-size: 1.1rem;
@@ -94,6 +98,12 @@ top: 0;
 .form_checkbox > p {
   margin: 3px 0;
 }
+.form_checkbox label, .form_radio label {
+  font-size: 1rem;
+}
+.form_radio label:first-of-type {
+  font-size: 1.1rem;
+}
 .form_submit_button {
   margin: calc(1.4vh + 5px);
 }
@@ -104,4 +114,10 @@ footer {
   text-align: center;
   border-top: #2292a4 3px solid;
   font-size: 1.1rem;
+}
+
+@media screen and (max-width: 300px) {
+  .contact_navbar a{
+    font-size: 0.9rem;
+  }
 }

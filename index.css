@@ -39,7 +39,7 @@ body {
   
 }
 .index_navbar {
-    padding: calc(0.5vh + 3px) 0;
+    padding: calc(0.5vh + 3px) 10px;
   display: flex;
   justify-content: center;
   gap: calc(15px + 1.5vw);
@@ -47,6 +47,7 @@ body {
   border-bottom: #2292a4 3px solid;
   position: sticky;
   top: 0;
+  flex-wrap: wrap;
 }
 .index_header h1 {
   margin: 12px;
@@ -75,6 +76,16 @@ body {
 .info_section > article > h2 {
   margin-top: 0;
   font-size: 1.6rem;
+}
+
+.image_section {
+  text-align: center;
+  margin: calc(15px + 1vh) auto;
+}
+.image_section img {
+  width: 300px;
+  max-width: 80vw;
+  border-radius: 30%;
 }
 
 footer {

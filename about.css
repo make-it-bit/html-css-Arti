@@ -181,6 +181,9 @@ footer {
   }
 } 
 @media screen and (max-width: 340px) {
+  .about_navbar a {
+    font-size: 0.9rem;
+  }
   .about_table td, th {
     padding: 2px;
     font-size: 0.9rem;
