@@ -16,6 +16,9 @@ body {
   flex-direction: column;
 }
 
+.about_button_box {
+  margin-top: 35px;
+}
 .button {
   background-color: #2292a4;
   padding: 7px 15px;
@@ -24,7 +27,7 @@ body {
   font-weight: 500;
   border-radius: 10px;
   text-decoration: none;
-  color: #BBADAD;
+  color: #293241;
   box-sizing: border-box;
 }
 .button:hover {
@@ -48,6 +51,13 @@ footer {
   margin-top: auto;
   background-color: #0f0a0a;
   text-align: center;
-  font-size: large;
+  font-size: 1.1rem;
   border-top: #2292a4 3px solid;
+}
+
+@media screen and (max-width: 520px) {
+  .thanks_section {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
 }

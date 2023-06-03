@@ -19,11 +19,11 @@ body {
 .button {
   background-color: #2292a4;
   padding: 7px 15px;
-  font-size: larger;
+  font-size: 1.25rem;
   font-weight: 500;
   border-radius: 10px;
   text-decoration: none;
-  color: #BBADAD;
+  color: #293241;
   box-sizing: border-box;
 }
 .button:hover {
@@ -49,7 +49,8 @@ body {
   top: 0;
 }
 .index_header h1 {
-  margin: 0.75rem;
+  margin: 12px;
+  font-size: 2rem;
 }
 
 .index_main {
@@ -67,17 +68,31 @@ body {
   padding: calc(1vh + 5px) calc(1vw + 5px);
 }
 .info_section > article > p {
-  font-size: large;
+  font-size: 1.15rem;
+  line-height: 1.7rem;
 }
 .info_section > h2,
 .info_section > article > h2 {
   margin-top: 0;
+  font-size: 1.6rem;
 }
 
 footer {
   margin-top: auto;
   background-color: #0f0a0a;
   text-align: center;
-  font-size: large;
+  font-size: 1.1rem;
   border-top: #2292a4 3px solid;
 }
+
+@media screen and (max-width: 535px) {
+  .index_header h1{
+    font-size: 1.8rem;
+    line-height: 2rem;
+    margin: 5px
+  }
+  .index_main {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+} 
