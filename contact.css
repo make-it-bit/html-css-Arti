@@ -116,7 +116,13 @@ footer {
   font-size: 1.1rem;
 }
 
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 535px) {
+  .contact_main {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+@media screen and (max-width: 340px) {
   .contact_navbar a{
     font-size: 0.9rem;
   }

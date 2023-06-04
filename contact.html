@@ -28,15 +28,13 @@
     <main class="contact_main">
       <section class="form_section">
         <h2>Contact form</h2>
-        <form
-          action="https://app.headlessforms.cloud/api/v1/form-submission/ewZmObXSuw"
-          method="POST"
-          onsubmit="window.location.replace('./thanks.html'); return false;"
+        <form 
+          id="form_element"
         >
           <div class="form_text" id="form_box">
             <label for="t1">Please give us Your e-mail.</label>
             <br />
-            <input type="text" id="t1" placeholder="E-mail" required />
+            <input type="text" id="t1" placeholder="E-mail" id="form_e-mail" required />
           </div>
           <div class="form_text" id="form_box">
             <label>By what name may I call You by?</label>
@@ -77,7 +75,7 @@
           </div>
           <div class="form_select" id="form_box">
             <label for="area"
-              >From where are You contacting me from (statistics)?</label
+              >From where are You contacting me (statistics)?</label
             >
             <br />
             <select id="area" name="country" required aria-placeholder="Choose">
@@ -94,7 +92,7 @@
             <label for="c1">I agree</label>
           </div>
           <div class="form_submit_button">
-            <button class="button" type="submit">Submit</button>
+            <button class="button" id="form_submit_button">Submit</button>
           </div>
         </form>
       </section>
@@ -102,5 +100,37 @@
     <footer>
       <p>© 2023 Bitropia, All Rights Reserved</p>
     </footer>
+    <script>
+      //Function to submit form
+      const form = document.getElementById("form_element");
+      const submitButton = document.getElementById("form_submit_button");
+
+      submitButton.addEventListener('click', function(event) {
+        event.preventDefault();
+
+        if (form.checkValidity) {
+          const formData = new FormData(); 
+
+          //appending data
+          formData.append('e-mail', document.getElementById('t1').value);
+          formData.append('name', document.getElementById('t2').value);
+          formData.append('reason-for-contact', document.querySelector('input[name=reason_for_contact]:checked').value);
+          formData.append('area', document.getElementById('area').value);
+          formData.append('GDPR-agreement', document.getElementById('c1').value);
+
+          fetch('https://app.headlessforms.cloud/api/v1/form-submission/ewZmObXSuw', {
+            method: 'POST',
+            body: formData
+          })
+          .then(response => {
+            if (response.ok) {
+              window.location.href = './thanks.html';
+            } else {
+              alert(new Error);
+            };
+          });
+        };
+      });
+    </script>
   </body>
 </html>
