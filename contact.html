@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact - Arti, a Web Development Intern</title>
-    <link rel="stylesheet" href="contact.css" />
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="stylesheet" href="/styles/contact.css" />
     <meta
       name="description"
       content="Lorem ipsum dolor sit amet consectetur adipisicing elit. 
@@ -15,26 +16,40 @@
       name="keywords"
       content="html, css, javascript, intern, SWE, contact page"
     />
-    <link rel="shortcut icon" type="image/ico" href="./resources/favicon/favicon.ico"/>
+    <link
+      rel="shortcut icon"
+      type="image/ico"
+      href="./resources/favicon/favicon.ico"
+    />
   </head>
   <body>
     <header class="contact_header">
       <h1>Contact me</h1>
     </header>
     <nav class="contact_navbar">
-      <a class="button" href="/index.html" title="Introduction">Introduction</a>
-      <a class="button" href="/about.html" title="About">About</a>
+      <ul>
+        <li>
+          <a class="button" href="/index.html" title="Introduction"
+            >Introduction</a
+          >
+        </li>
+        <li><a class="button" href="/about.html" title="About">About</a></li>
+      </ul>
     </nav>
     <main class="contact_main">
       <section class="form_section">
         <h2>Contact form</h2>
-        <form 
-          id="form_element"
-        >
+        <form id="form_element">
           <div class="form_text" id="form_box">
             <label for="t1">Please give us Your e-mail.</label>
             <br />
-            <input type="text" id="t1" placeholder="E-mail" id="form_e-mail" required />
+            <input
+              type="text"
+              id="t1"
+              placeholder="E-mail"
+              id="form_e-mail"
+              required
+            />
           </div>
           <div class="form_text" id="form_box">
             <label>By what name may I call You by?</label>
@@ -105,31 +120,40 @@
       const form = document.getElementById("form_element");
       const submitButton = document.getElementById("form_submit_button");
 
-      submitButton.addEventListener('click', function(event) {
+      submitButton.addEventListener("click", function (event) {
         event.preventDefault();
 
         if (form.checkValidity) {
-          const formData = new FormData(); 
+          const formData = new FormData();
 
           //appending data
-          formData.append('e-mail', document.getElementById('t1').value);
-          formData.append('name', document.getElementById('t2').value);
-          formData.append('reason-for-contact', document.querySelector('input[name=reason_for_contact]:checked').value);
-          formData.append('area', document.getElementById('area').value);
-          formData.append('GDPR-agreement', document.getElementById('c1').value);
+          formData.append("e-mail", document.getElementById("t1").value);
+          formData.append("name", document.getElementById("t2").value);
+          formData.append(
+            "reason-for-contact",
+            document.querySelector("input[name=reason_for_contact]:checked")
+              .value
+          );
+          formData.append("area", document.getElementById("area").value);
+          formData.append(
+            "GDPR-agreement",
+            document.getElementById("c1").value
+          );
 
-          fetch('https://app.headlessforms.cloud/api/v1/form-submission/ewZmObXSuw', {
-            method: 'POST',
-            body: formData
-          })
-          .then(response => {
+          fetch(
+            "https://app.headlessforms.cloud/api/v1/form-submission/ewZmObXSuw",
+            {
+              method: "POST",
+              body: formData,
+            }
+          ).then((response) => {
             if (response.ok) {
-              window.location.href = './thanks.html';
+              window.location.href = "./thanks.html";
             } else {
-              alert(new Error);
-            };
+              alert(new Error());
+            }
           });
-        };
+        }
       });
     </script>
   </body>
