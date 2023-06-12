@@ -12,15 +12,8 @@
       content="Lorem ipsum dolor sit amet consectetur adipisicing elit. 
     Eligendi dolor reiciendis corrupti tempore officiis molestias eveniet alias? "
     />
-    <meta
-      name="keywords"
-      content="html, css, javascript, intern, SWE, contact page"
-    />
-    <link
-      rel="shortcut icon"
-      type="image/ico"
-      href="./resources/favicon/favicon.ico"
-    />
+    <meta name="keywords" content="html, css, javascript, intern, SWE, contact page" />
+    <link rel="shortcut icon" type="image/ico" href="./resources/favicon/favicon.ico" />
   </head>
   <body>
     <header class="contact_header">
@@ -29,9 +22,7 @@
     <nav class="contact_navbar">
       <ul>
         <li>
-          <a class="button" href="/index.html" title="Introduction"
-            >Introduction</a
-          >
+          <a class="button" href="/index.html" title="Introduction">Introduction</a>
         </li>
         <li><a class="button" href="/about.html" title="About">About</a></li>
       </ul>
@@ -43,13 +34,7 @@
           <div class="form_text" id="form_box">
             <label for="t1">Please give us Your e-mail.</label>
             <br />
-            <input
-              type="text"
-              id="t1"
-              placeholder="E-mail"
-              id="form_e-mail"
-              required
-            />
+            <input type="text" id="t1" placeholder="E-mail" id="form_e-mail" required />
           </div>
           <div class="form_text" id="form_box">
             <label>By what name may I call You by?</label>
@@ -57,41 +42,19 @@
             <input type="text" id="t2" placeholder="Name" required />
           </div>
           <div class="form_radio" id="form_box">
-            <label for="reason_for_contact"
-              >Tell me about the reason You're contacting me.</label
-            >
+            <label for="reason_for_contact">Tell me about the reason You're contacting me.</label>
             <br />
-            <input
-              type="radio"
-              name="reason_for_contact"
-              value="freelance-gig"
-              id="r1"
-              required
-            />
+            <input type="radio" name="reason_for_contact" value="freelance-gig" id="r1" required />
             <label for="r1">Freelance-gig</label>
             <br />
-            <input
-              type="radio"
-              name="reason_for_contact"
-              value="invite_to_swimming"
-              id="r2"
-              required
-            />
+            <input type="radio" name="reason_for_contact" value="invite_to_swimming" id="r2" required />
             <label for="r2">An invite to go swimming</label>
             <br />
-            <input
-              type="radio"
-              name="reason_for_contact"
-              value="website-bug"
-              id="r3"
-              required
-            />
+            <input type="radio" name="reason_for_contact" value="website-bug" id="r3" required />
             <label for="r3">Reporting a bug</label>
           </div>
           <div class="form_select" id="form_box">
-            <label for="area"
-              >From where are You contacting me (statistics)?</label
-            >
+            <label for="area">From where are You contacting me (statistics)?</label>
             <br />
             <select id="area" name="country" required aria-placeholder="Choose">
               <option value="" disabled selected>Select Your option</option>
@@ -117,42 +80,37 @@
     </footer>
     <script>
       //Function to submit form
-      const form = document.getElementById("form_element");
-      const submitButton = document.getElementById("form_submit_button");
+      const form = document.getElementById('form_element');
+      const submitButton = document.getElementById('form_submit_button');
 
-      submitButton.addEventListener("click", function (event) {
+      submitButton.addEventListener('click', async (event) => {
         event.preventDefault();
 
         if (form.checkValidity) {
           const formData = new FormData();
 
           //appending data
-          formData.append("e-mail", document.getElementById("t1").value);
-          formData.append("name", document.getElementById("t2").value);
-          formData.append(
-            "reason-for-contact",
-            document.querySelector("input[name=reason_for_contact]:checked")
-              .value
-          );
-          formData.append("area", document.getElementById("area").value);
-          formData.append(
-            "GDPR-agreement",
-            document.getElementById("c1").value
-          );
+          formData.append('e-mail', document.getElementById('t1').value);
+          formData.append('name', document.getElementById('t2').value);
+          formData.append('reason-for-contact', document.querySelector('input[name=reason_for_contact]:checked').value);
+          formData.append('area', document.getElementById('area').value);
+          formData.append('GDPR-agreement', document.getElementById('c1').value);
 
-          fetch(
-            "https://app.headlessforms.cloud/api/v1/form-submission/ewZmObXSuw",
-            {
-              method: "POST",
-              body: formData,
-            }
-          ).then((response) => {
-            if (response.ok) {
-              window.location.href = "./thanks.html";
-            } else {
-              alert(new Error());
-            }
-          });
+          fetch('https://app.headlessforms.cloud/api/v1/form-submission/ewZmObXSuw', {
+            method: 'POST',
+            body: formData,
+          })
+            .then((response) => {
+              if (response.ok) {
+                window.location.href = './thanks.html';
+              } else {
+                alert(new Error());
+              }
+            })
+            .catch((error) => {
+              // https://app.headlessforms.cloud/api/v1/form-submission/ewZmObXSuwjdshiudh9839289
+              console.log(error);
+            });
         }
       });
     </script>
