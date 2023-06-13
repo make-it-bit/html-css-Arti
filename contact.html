@@ -7,6 +7,7 @@
     <title>Contact - Arti, a Web Development Intern</title>
     <link rel="stylesheet" href="/styles/reset.css" />
     <link rel="stylesheet" href="/styles/contact.css" />
+    <link rel="stylesheet" href="/styles/shared.css"/>
     <meta
       name="description"
       content="Lorem ipsum dolor sit amet consectetur adipisicing elit. 
@@ -102,12 +103,17 @@
             </select>
           </div>
           <div class="form_checkbox" id="form_box">
-            <p>Do You agree with the current GDPR practices?</p>
-            <input type="checkbox" id="c1" name="gdpr-agreement" required />
-            <label for="c1">I agree</label>
+            <label for="c1">
+              <p>Do You agree with the current GDPR practices?</p>
+              <div class="checkbox_div">
+                <input type="checkbox" id="c1" name="gdpr-agreement" required />
+                <span>I agree</span>
+                <span class="checkmark"></span>
+              </div>
+            </label>
           </div>
           <div class="form_submit_button">
-            <button class="button" id="form_submit_button">Submit</button>
+            <button type="submit" class="button" id="form_submit_button">Submit</button>
           </div>
         </form>
       </section>
@@ -120,7 +126,7 @@
       const form = document.getElementById("form_element");
       const submitButton = document.getElementById("form_submit_button");
 
-      submitButton.addEventListener("click", function (event) {
+      form.addEventListener("submit", function (event) {
         event.preventDefault();
 
         if (form.checkValidity) {

@@ -7,6 +7,7 @@
     <title>About me - Arti, a Web Development Intern</title>
     <link rel="stylesheet" href="/styles/reset.css" />
     <link rel="stylesheet" href="/styles/about.css" />
+    <link rel="stylesheet" href="/styles/shared.css"/>
     <meta
       name="description"
       content="Lorem ipsum dolor sit amet consectetur adipisicing elit. 
@@ -39,13 +40,13 @@
       </ul>
     </nav>
     <main class="about_main">
-      <section class="about_section">
+      <section class="about_section dropdown_section">
         <h2>My hobbies</h2>
         <div>
-          <section class="hobby">
+          <section class="hobby" onmouseover="changeParagraphOnToggle(0, 'small')" onmouseout="changeParagraphOnToggle(0, 'big')">
             <h3>MMA</h3>
             <svg>
-              <image href="/resources/mma_icon_vector.svg" alt="cage" />
+              <image href="/public/mma_icon_vector.svg" alt="cage" />
             </svg>
             <p
               class="hobby_text_section_1"
@@ -61,10 +62,10 @@
               striking, grappling and ground fighting.
             </p>
           </section>
-          <section class="hobby">
+          <section class="hobby" onmouseover="changeParagraphOnToggle(1, 'small')" onmouseout="changeParagraphOnToggle(1, 'big')">
             <h3>Coding</h3>
             <svg>
-              <image href="/resources/coding_icon_vector.svg" alt="computer" />
+              <image href="/public/coding_icon_vector.svg" alt="computer" />
             </svg>
             <p
               class="hobby_text_section_1"
@@ -80,10 +81,10 @@
               striking, grappling and ground fighting.
             </p>
           </section>
-          <section class="hobby">
+          <section class="hobby" onmouseover="changeParagraphOnToggle(2, 'small')" onmouseout="changeParagraphOnToggle(2, 'big')">
             <h3>Lifting</h3>
             <svg>
-              <image href="/resources/lifting_icon_vector.svg" alt="barbell" />
+              <image href="/public/lifting_icon_vector.svg" alt="barbell" />
             </svg>
             <p
               class="hobby_text_section_1"
@@ -138,7 +139,7 @@
       );
 
       //function for toggling them
-      function changeParagraphOnToggle(hobbyId, currentDivSize) {
+      const changeParagraphOnToggle = (hobbyId, currentDivSize) => {
         if (currentDivSize === "small") {
           listOfBigDivs[hobbyId].style.display = "block";
           listOfSmallDivs[hobbyId].style.display = "none";
